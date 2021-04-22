@@ -1,1 +1,1 @@
-# vue-parent-school-activities-be
+# parent-school-activities-be
