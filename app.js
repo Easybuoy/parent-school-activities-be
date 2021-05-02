@@ -61,7 +61,6 @@ app.get('/', (req, res) => {
   });
 });
 
-//Retrieve all the objects from a collection within MongoDB
 app.get('/collection/:collectionName', (req, res) => {
   req.collection.find({}).toArray((e, results) => {
     if (e) return next(e);
@@ -69,7 +68,6 @@ app.get('/collection/:collectionName', (req, res) => {
   });
 });
 
-//Add an object to Mongodb
 app.post('/order/createOrder', (req, res, next) => {
   db.collection('orders').insertOne(req.body, (e, results) => {
     if (e) return next(e);
