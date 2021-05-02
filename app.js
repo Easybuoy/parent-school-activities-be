@@ -53,7 +53,6 @@ app.param('collectionName', (req, res, next, collectionName) => {
   return next();
 });
 
-// Display Message for the root path to show the API is working
 app.get('/', (req, res) => {
   res.json({
     status: 'up',
@@ -101,7 +100,6 @@ app.put('/collection/:collectionName/:id', (req, res, next) => {
   );
 });
 
-// Delete An object By ID
 app.delete('/collection/:collectionName/:id', (req, res, next) => {
   req.collection.deleteOne({ _id: ObjectID(req.params.id) }, (e, result) => {
     if (e) return next(e);
