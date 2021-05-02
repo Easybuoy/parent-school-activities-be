@@ -109,5 +109,6 @@ app.delete('/collection/:collectionName/:id', (req, res, next) => {
   });
 });
 
-app.listen(2000);
+const port = process.env.PORT || 2000;
+app.listen(port);
 console.log('server running on Port 2000');
