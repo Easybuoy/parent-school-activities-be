@@ -78,7 +78,6 @@ app.post('/order/createOrder', (req, res, next) => {
   });
 });
 
-//Add an object to Mongodb
 app.post('/collection/:collectionName', (req, res, next) => {
   req.collection.insert(req.body, (e, results) => {
     if (e) return next(e);
@@ -86,7 +85,6 @@ app.post('/collection/:collectionName', (req, res, next) => {
   });
 });
 
-// Update an object by ID
 app.put('/collection/:collectionName/:id', (req, res, next) => {
   req.collection.update(
     { _id: new ObjectID(req.params.id) },
