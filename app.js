@@ -71,7 +71,15 @@ app.get('/collection/:collectionName', (req, res) => {
 });
 
 //Add an object to Mongodb
-app.post('/collection/:collectionName', (req, res, next) => {
+app.post('/order/createOrder', (req, res, next) => {
+  db.collection('orders').insert(req.body, (e, results) => {
+    if (e) return next(e);
+    res.json({ status: 'success', results: results.ops });
+  });
+});
+
+//Add an object to Mongodb
+app.post('/order/:collectionName', (req, res, next) => {
   req.collection.insert(req.body, (e, results) => {
     if (e) return next(e);
     res.json({ status: 'success', results: results.ops });
