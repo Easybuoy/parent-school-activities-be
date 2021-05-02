@@ -58,7 +58,7 @@ app.get('/', (req, res) => {
   res.json({
     status: 'up',
     message:
-      'Api is working, Please select a collection, eg collection/messages',
+      'Api is working, Please select a collection, eg collection/messages..',
   });
 });
 
